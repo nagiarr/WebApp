@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lange="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDoアプリ</title>
+</head>
 <body>
+    <h1>ToDoアプリ</h1>
 
-    <form action>
-
-    <h1>Hello [[${name}]]</h1>
+    <form action="/add" method="post">
+        <input type="text" name="title" placeholder="やることを入力">
+        <button type="submit">追加</button>
+    </form>
+    <ul>
+        <li th:each="todo : ${todos}" th:text="${todo.title}"></li>
+    </ul>
 </body>
 </html>
