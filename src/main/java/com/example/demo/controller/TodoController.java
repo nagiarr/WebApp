@@ -25,6 +25,7 @@ public class TodoController {
     @PostMapping("/add")
     public String add(@RequestParam String title) {
         todos.add(new Todo(title));
+        System.out.println("追加" + title);
         return "redirect:/";
     }
 
