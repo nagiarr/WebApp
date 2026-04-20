@@ -12,9 +12,14 @@
         <button type="submit">追加</button>
     </form>
     <ul>
-        <li th:each="todo : ${todos}">
-
+        <li th:each="todo, stat : ${todos}">
         <span th:text="${todo.title}"></span>
+
+        <form action="/delete" method="post" style="display:inLine;">
+            <input type="hidden" name="index" th:value="${stat.index}">
+            <button type="submit">削除</button>
+        </form>
+
     </li>
     </ul>
 </body>

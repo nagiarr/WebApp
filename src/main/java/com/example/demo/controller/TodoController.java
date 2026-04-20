@@ -28,4 +28,9 @@ public class TodoController {
         return "redirect:/";
     }
 
+    @PostMapping("/delete")
+    public String delete(@RequestParam int index) {
+        todos.remove(index);
+        return "redirect:/";
+    }
 }
