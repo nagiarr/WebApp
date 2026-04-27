@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import com.example.demo.entity.User;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,6 +33,11 @@ public class Todo {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public void setUser(User user) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setUser'");
     }
 
 }
