@@ -28,7 +28,7 @@ public class TodoController {
         String username = auth.getName();
 
         model.addAttribute("todos",
-                repository.findByUsername(username));
+                repository.findByUserUsername(username));
 
         return "index";
     }

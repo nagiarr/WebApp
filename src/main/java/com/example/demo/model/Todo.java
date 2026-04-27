@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Todo {
@@ -15,6 +16,9 @@ public class Todo {
     private Long id;
 
     private String title;
+
+    @ManyToOne
+    private User user;
 
     public Todo() {
     }
@@ -36,7 +40,6 @@ public class Todo {
     }
 
     public void setUser(User user) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setUser'");
     }
 
