@@ -25,6 +25,10 @@ public class TodoController {
     @GetMapping("/")
     public String list(Model model, Authentication auth) {
 
+        if (auth == null) {
+            return "redirect:/login";
+        }
+
         String username = auth.getName();
 
         model.addAttribute("todos",
