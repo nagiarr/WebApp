@@ -17,7 +17,7 @@ public class AuthController {
 
     @GetMapping("/register")
     public String showRegister() {
-        return "resister";
+        return "register";
     }
 
     @PostMapping("/register")
