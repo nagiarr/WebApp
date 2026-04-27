@@ -31,6 +31,12 @@
 
 	<dependencies>
 
+	<!-- 既存のJPAやWebの依存 -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-security</artifactId>
+	</dependency>
+
 	<!-- DB接続 -->
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
