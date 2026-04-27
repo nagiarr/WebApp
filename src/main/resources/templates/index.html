@@ -8,7 +8,7 @@
     <h1>ToDoアプリ</h1>
 
     <form action="/add" method="post">
-        <input type="hidden" th:name="${_csrf.paramaterName}" th:value="${_csrf.token}">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
 
         <input type="text" name="title" placeholder="やることを入力" required>
         <button type="submit">追加</button>
@@ -18,13 +18,15 @@
             <span th:text="${todo.title}"></span>
 
             <form action="/delete" method="post" style="display:inline;">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
                 <input type="hidden" name="id" th:value="${todo.id}">
                 <button type="submit">削除</button>
             </form>
         </li>
     </ul>
     <form action="/logout" method="post">
-        <input type="hidden" th:name="${_csrf/parameterName}" th:value="${_csrf.token}">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
         <button type="submit">ログアウト</button>
     </form>
 
@@ -33,7 +35,6 @@
         alt="This is QRcode=https://github.com/nagiarr/portfolio/settings/pages"
         src="/images/QRcode_Portfolio_YanagimachiAritoshi_1.svg">
 
-    </section>
     <link rel="stylesheet" href="/css/style.css">
 </body>
 </html>
