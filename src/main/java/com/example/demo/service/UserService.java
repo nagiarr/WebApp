@@ -25,5 +25,7 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(password));
 
         userRepository.save(user);
+
+        System.out.println("登録処理実行: " + username);
     }
 }
