@@ -21,26 +21,16 @@ public class TodoController {
         this.userRepository = userRepository;
     }
 
-    // // ★ ログインユーザーのToDoだけ表示
-    // @GetMapping("/")
-    // public String list(Model model, Authentication auth) {
-
-    // if (auth == null) {
-    // return "redirect:/login";
-    // }
-
-    // String username = auth.getName();
-
-    // model.addAttribute("todos",
-    // repository.findByUserUsername(username));
-
-    // return "index";
-    // }
-
+    // ★ ログインユーザーのToDoだけ表示
     @GetMapping("/")
-    @ResponseBody
-    public String test(Authentication auth) {
-        return auth == null ? "NOT LOGIN" : auth.getName();
+    public String list(Model model, Authentication auth) {
+
+        String username = auth.getName();
+
+        model.addAttribute("todos",
+                repository.findByUserUsername(username));
+
+        return "index";
     }
 
     // ★ ユーザー紐付けして保存
