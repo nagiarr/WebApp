@@ -19,7 +19,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/register").permitAll()
                         .anyRequest().authenticated())
-                .formLogin(form -> form.permitAll())
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .permitAll())
                 .logout(logout -> logout
                         .logoutUrl("/logout")
                         .logoutSuccessUrl(("/login"))
