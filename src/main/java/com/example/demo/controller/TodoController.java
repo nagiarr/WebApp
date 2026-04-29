@@ -43,7 +43,7 @@ public class TodoController {
         Todo todo = new Todo(title);
         todo.setUser(user);
 
-        repository.save(todo); // ← 修正ポイント
+        repository.save(todo);
 
         return "redirect:/";
     }
